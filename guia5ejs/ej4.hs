@@ -5,7 +5,7 @@ sacarEspaciosRepetidos (x:[])=[x]
 sacarEspaciosRepetidos (x:y:xs) | x==y && x==' ' = sacarEspaciosRepetidos(y:xs)
                                 | otherwise = x:(sacarEspaciosRepetidos(y:xs))
 
---- Inciso B) Es increible realmente, intente imaginarlo.
+--- Inciso B)
 contarEspacios :: [Char] -> Integer
 contarEspacios [] = 0
 contarEspacios (x:xs) | x==' ' = 1 + contarEspacios xs
