@@ -36,10 +36,11 @@ primerpalabra (x:y:xs) | x /= ' ' && y == ' ' = [x]
                        | x /= ' ' && y /= ' '  = x:primerpalabra(y:xs)
 
 sacarprimerpalabra :: [Char] -> [Char]
+sacarprimerpalabra [] = []
 sacarprimerpalabra [x] = []
 sacarprimerpalabra (x:y:xs) | x /= ' ' && y == ' ' = (xs)
                             | x /= ' ' && y /= ' '  = sacarprimerpalabra(y:xs)
 
 palabras :: [Char] -> [[Char]] --que dada una lista arma una nueva lista con las palabras de la lista original
-palabras (x:[]) = [[x]]
+palabras [] = []
 palabras (xs) = primerpalabra(limpiarCadena(xs)):palabras(sacarprimerpalabra(limpiarCadena xs))
