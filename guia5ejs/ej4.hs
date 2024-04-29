@@ -29,10 +29,15 @@ contarPalabras :: [Char] -> Integer
 contarPalabras xs = contarEspacios (limpiarCadena xs) + 1
 
 --- Inciso C) info: que dada una lista arma una nueva lista con las palabras de la lista original
-sepiii :: [Char] -> [Char]
-sepiii (xs) = separador(limpiarCadena(xs))
+primerpalabra :: [Char] -> [Char]
+primerpalabra []=[]
+primerpalabra (x:y:xs) | x /= ' ' && y == ' ' = [x] 
+                       | x /= ' ' && y /= ' '  = x:primerpalabra(y:xs)
 
-separador :: [Char] -> [Char]
-separador []=[]
-separador (x:y:xs) | x /= ' ' && y == ' ' = [x]
-                   | otherwise =x:separador(y:xs)
+sacarprimerpalabra :: [Char] -> [Char]
+sacarprimerpalabra [] = []
+sacarprimerpalabra (x:y:xs) | x /= ' ' && y == ' ' = (xs)
+                            | x /= ' ' && y /= ' '  = sacarprimerpalabra(y:xs)
+
+palabras :: [Char] -> [[Char]] --que dada una lista arma una nueva lista con las palabras de la lista original
+palabras (xs) |  
