@@ -274,10 +274,9 @@ print(del_uno_al_diez_pt2())
 
 #b)
 def pares_entre_10_y_40_pt_2():
-    res:list = list(range(10, 40, 2))
-    return res
-print(del_uno_al_diez_pt2())
+    print(list(range(10, 42, 2)))
 
+pares_entre_10_y_40_pt_2()
 
 
 
