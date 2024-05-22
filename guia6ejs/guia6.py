@@ -98,4 +98,111 @@ print(es_bisiesto(2024))
 print(es_bisiesto(2023))     
 
 #Ejercicio 4)
+#1)
+def peso_pino(altura: int)->int:
+    if altura <= 3: 
+       return altura*300
+    else:
+       return (altura - 3)*200 + 3*300 
+print(peso_pino(5))
+   
+#2)
+def es_peso_util(peso:int)->str:
+    if 400<=peso<=1000:
+       return("El peso sirve")
+    else:
+       return("El peso no sirve") 
+
+print(es_peso_util(1001)) 
+print(es_peso_util(399)) 
+print(es_peso_util(777))
+
+#3)
+def sirve_pino(altura: int)->str:
+    if 400<=peso_pino(altura)<=1000:
+        return("Sirve")
+    else:
+        return("No sirve")
+print(sirve_pino(5)) 
+print(sirve_pino(3))  
+print(sirve_pino(2))       
+
+#4)
+def sirve_pino_2(altura: int)->str:
+    if es_peso_util(peso_pino(altura)) == "El peso sirve":
+        return("Sirve el pino che")
+    else:
+        return("El pino no sirve chupapijas")
+    
+print(sirve_pino_2(4))
+print(sirve_pino_2(2))
+
+#Ejercicio 5)
+#1)
+def devolver_el_doble_si_es_par(numero:int)->int:
+    if numero % 2 == 0:
+        return numero*2
+    else:
+        return numero
+    
+print(devolver_el_doble_si_es_par(8))  
+
+#2)
+def devolver_valor_si_es_par_sino_el_que_sigue(numero:int)->int:
+    if numero % 2 == 0:
+        return numero
+    else:
+        return (numero + 1) 
+    
+print(devolver_valor_si_es_par_sino_el_que_sigue(10))
+
+#3)
+def devolver_el_doble_si_es_multiplo_de_3_el_triple_si_es_multiplo_9(numero:int)->int:
+    if numero % 9 == 0:
+        return numero*3
+    elif numero % 3 == 0:
+        return numero*2
+    else:
+        return numero
+print(devolver_el_doble_si_es_multiplo_de_3_el_triple_si_es_multiplo_9(9))
+print(devolver_el_doble_si_es_multiplo_de_3_el_triple_si_es_multiplo_9(3))
+
+#4)
+def lindo_nombre(nombre:str)->str:
+    if len(nombre) >= 5:
+        return("Tu nombre tiene muchas letras!")
+    else:
+        return("Tu nombre tiene menos de 5 caracteres")       
+print(lindo_nombre("Hatem"))   
+print(lindo_nombre("Pier")) 
+
+#5)
+def elRango(numero:int)->str:
+    if numero < 5:
+        return("Menor a 5 (cuidado con Drake)")
+    elif 10 <= numero <= 20:
+        return ("Entre 10 y 20 (still cuidado con Drake)")
+    elif numero > 20:
+        return("Mayor a 20 (no temas a Drake)")
+
+print(elRango(4))     
+print(elRango(15))
+print(elRango(69))
+
+#6)
+def cagaste_si(edad:int,sexo:str)->str:
+    if (sexo == "Hombre" or sexo == "Mujer") and edad < 18:
+        return("Anda de vacaciones pibe")
+    elif sexo == "Hombre" and edad >= 65:
+        return("Anda de vacaciones papucho")
+    elif sexo == "Mujer" and edad >= 60:
+        return("Anda de vacaciones mamucha")
+    elif (sexo == "Hombre" or sexo == "Mujer") and edad >= 18 :
+        return("Anda a laburar, gil laburante")   
+
+print(cagaste_si(20,"Hombre"))
+print(cagaste_si(65,"Hombre"))
+print(cagaste_si(60,"Mujer"))
+
+#Ejercicio 6)  
  
