@@ -266,17 +266,71 @@ def qped_aristoteles(añodepartida:int):
 qped_aristoteles(33)
 
 #Ejercicio 7)
-#a)
+#1)
 def del_uno_al_diez_pt2():
     res:list = list(range(1,11))
     return res
 print(del_uno_al_diez_pt2())
 
-#b)
+#2)
 def pares_entre_10_y_40_pt_2():
     print(list(range(10, 42, 2)))
 
 pares_entre_10_y_40_pt_2()
+
+#3) def eco_10_pt2():
+
+#Ejercicio 8)
+#1)
+x = 5
+y = 7
+x = x + y 
+print(x)
+
+#2)
+x = 5
+y = 7
+z = x + y
+y = z*2
+print(y)
+
+#3)
+x = 5
+y = 7
+x = "hora"
+y = x*2
+print(y)
+
+#4)
+x = False
+res = not(x)
+print(res)
+
+#5)
+x = False
+x = not(x)
+print(x)
+
+#6)
+x = True
+y = False
+res = x and y
+x = res and x
+print(x)
+
+#Ejercicio 9)
+
+def rt(x: int, g: int) -> int:
+    g = g + 1
+    return x + g
+
+g: int = 0
+
+def ro(x: int) -> int:
+    global g
+    g = g + 1
+    return x + g
+
 
 
 
