@@ -205,4 +205,111 @@ print(cagaste_si(65,"Hombre"))
 print(cagaste_si(60,"Mujer"))
 
 #Ejercicio 6)  
+#1)
+def del_uno_al_diez():
+    lista = []
+    i = 1
+    while(i <= 10):
+        lista.append(i)
+        i += 1
+    return lista
+print(del_uno_al_diez()) 
+
+#2)
+def pares_entre_10_y_40():
+    lista = []
+    i = 10
+    while(i <= 40 and i % 2 == 0):
+        lista.append(i)
+        i += 2
+    return lista
+print(pares_entre_10_y_40())
+
+#3)
+def eco_por_10():
+    nom = "eco"
+    return nom*10
+print(eco_por_10())
+
+#4)
+def cuenta_regresiva(numero:int):
+    mensaje = []
+    while(numero >= 1):
+        mensaje.append(numero)
+        numero -= 1
+    if numero == 0:
+        mensaje.append("Despegue")
+    return mensaje
+print(cuenta_regresiva(10))
+print(cuenta_regresiva(50))
+
+#5)
+def trunks(añodepartida:int,algunañodellegada:int):
+    mensaje:list = []
+    texto:str = "Viajo un año al pasado, estamos en el año "
+    while(añodepartida > algunañodellegada):
+        añodepartida -= 1
+        mensaje.append(texto+str(añodepartida))
+    print(mensaje)
+
+trunks(2023,2018)
+
+#6)
+def qped_aristoteles(añodepartida:int):
+    mensaje:list = []
+    texto:str = "Viajo 20 años al pasado, estamos en el año "
+    while(añodepartida > (-384)):
+        añodepartida -= 20
+        mensaje.append(texto+str(añodepartida))
+    print(mensaje)
+
+qped_aristoteles(33)
+
+#Ejercicio 7)
+#a)
+def del_uno_al_diez_pt2():
+    res:list = list(range(1,11))
+    return res
+print(del_uno_al_diez_pt2())
+
+#b)
+def pares_entre_10_y_40_pt_2():
+    res:list = list(range(10, 40, 2))
+    return res
+print(del_uno_al_diez_pt2())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
