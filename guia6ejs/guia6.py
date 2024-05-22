@@ -278,8 +278,36 @@ def pares_entre_10_y_40_pt_2():
 
 pares_entre_10_y_40_pt_2()
 
-#3) def eco_10_pt2():
+#3) 
+def eco_10_pt2():
+    for i in range(1,11,1):
+        print("eco")
 
+eco_10_pt2()    
+
+#4)
+def cuenta_regresiva_pt2(numero:int):
+    for i in range(numero,0,-1):
+        print(i)
+    print("Despegue!")       
+        
+print(cuenta_regresiva_pt2(10))
+
+#5)
+def trunks_pt2(añodepartida: int, añodellegada: int):
+    texto:str = "Viajo un año al pasado, estamos en el año "
+    for i in range(añodepartida-1,añodellegada-1,-1):
+       print(texto+str(i))
+print(trunks_pt2(2023,2018))
+
+#6)
+def qped_aristotele_pt2(añodepartida: int):
+    texto:str = "Viajo 20 años al pasado, estamos en el año "
+    for i in range(añodepartida-20,-384,-20):
+       print(texto+str(i))
+    print("Anda a conocer a Aristoteles chinwenwencha")   
+print(qped_aristotele_pt2(-10))       
+    
 #Ejercicio 8)
 #1)
 x = 5
@@ -319,17 +347,24 @@ x = res and x
 print(x)
 
 #Ejercicio 9)
+g: int = 0
 
 def rt(x: int, g: int) -> int:
     g = g + 1
     return x + g
 
-g: int = 0
+print(rt(1,0))
+print(rt(1,0))
+print(rt(1,0))
 
 def ro(x: int) -> int:
     global g
     g = g + 1
     return x + g
+
+print(ro(1))
+print(ro(1))
+print(ro(1))
 
 
 
