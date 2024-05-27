@@ -158,6 +158,14 @@ def reemplaza_vocal(palabra:list[chr])->list[chr]:
             concatenacion += palabra[i]
     return concatenacion
 
+#5)
+def da_vuelta_string(palabra:str)->str:
+    res:str=""
+    for i in range(0,len(palabra)):
+        res += palabra[len(palabra)-i-1]
+    return res
+
+
     
                      
  
