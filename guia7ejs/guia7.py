@@ -132,21 +132,21 @@ def borrapar_ponecero_pt2(lista:list[int])->list[int]:
             res.append(lista[i])
     return res
 
-#3) 
-def borra_vocal(palabra:str)->str:
-    fin:str = ""
-    for i in range(0,len(palabra)):
-        if pertenece(("A","E","I","O","U","a","e","i","o","u"),palabra[i])==True:
-            palabra[i] = ""
-        else:
-            palabra[i] = i
-    return palabra                
-            
-
-def pertenecefin(x:list,y)->bool:
-    for i in range(0,len(x)):
-        if (y == x[i]):
+#3)                       
+def pertenecefin(x:list, y:chr)->bool:
+    for c in x:
+        if (y == c):
             return True
     return False
+
+def borra_vocal(palabra:str)->str:
+    concatenacion:str = ""
+    for i in range(len(palabra)):
+        if pertenecefin(['A','E','I','O','U','a','e','i','o','u'],palabra[i])==True:
+            concatenacion = concatenacion
+        else:
+            concatenacion += palabra[i]
+    return concatenacion
+    
                      
  
