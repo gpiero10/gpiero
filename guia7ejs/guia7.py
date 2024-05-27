@@ -116,6 +116,22 @@ def tresvocalesdist(palabra:str)->bool:
         return False
     
 #EJERCICIO 2)
+#1)
 def borrapar_ponecero(lista:list[int])->list[int]:
+    for i in range(0,len(lista),2):
+        lista[i] = 0
+    return lista    
+
+#2)
+def borrapar_ponecero_pt2(lista:list[int])->list[int]:
+    res:list[int] = []
+    for i in range(0,len(lista),1):
+        if (i%2==0):
+            res.append(0)
+        else:
+            res.append(lista[i])
+    return res
+
+#3) 
                      
  
