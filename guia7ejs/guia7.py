@@ -165,7 +165,14 @@ def da_vuelta_string(palabra:str)->str:
         res += palabra[len(palabra)-i-1]
     return res
 
-
-    
-                     
+#6) a terminar
+def eliminar_repetidos(palabra:str)->str:
+    res:str=""
+    for i in range(0,len(palabra)):
+        for j in range(i+1,len(palabra)):
+            if palabra[i] == palabra[j]:
+                res += 
+            else:
+                res += palabra[i]
+       
  
