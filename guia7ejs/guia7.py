@@ -133,5 +133,20 @@ def borrapar_ponecero_pt2(lista:list[int])->list[int]:
     return res
 
 #3) 
+def borra_vocal(palabra:str)->str:
+    fin:str = ""
+    for i in range(0,len(palabra)):
+        if pertenece(("A","E","I","O","U","a","e","i","o","u"),palabra[i])==True:
+            palabra[i] = ""
+        else:
+            palabra[i] = i
+    return palabra                
+            
+
+def pertenecefin(x:list,y)->bool:
+    for i in range(0,len(x)):
+        if (y == x[i]):
+            return True
+    return False
                      
  
