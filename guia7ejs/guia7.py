@@ -147,6 +147,17 @@ def borra_vocal(palabra:str)->str:
         else:
             concatenacion += palabra[i]
     return concatenacion
+
+#4)
+def reemplaza_vocal(palabra:list[chr])->list[chr]:
+    concatenacion:str = ""
+    for i in range(len(palabra)):
+        if pertenecefin(['a','e','i','o','u'],palabra[i])==True:
+            concatenacion += "_"
+        else:
+            concatenacion += palabra[i]
+    return concatenacion
+
     
                      
  
