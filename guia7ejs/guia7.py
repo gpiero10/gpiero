@@ -165,14 +165,50 @@ def da_vuelta_string(palabra:str)->str:
         res += palabra[len(palabra)-i-1]
     return res
 
-#6) a terminar
+#6)
 def eliminar_repetidos(palabra:str)->str:
-    res:str=""
+    res:str = ""
     for i in range(0,len(palabra)):
-        for j in range(i+1,len(palabra)):
-            if palabra[i] == palabra[j]:
-                res += 
-            else:
-                res += palabra[i]
+        if (palabra[i] not in res):
+            res += palabra[i]
+    return res
+
+#EJERCICIO 3)
+def aprobado(notas:[int])->int:
+    for nota in notas:
+        if mayor_igual_a_4(notas) == True and promedio(notas) >= 7:
+            return 1
+        elif mayor_igual_a_4(notas) == True and (4 <= promedio(notas) < 7):
+            return 2
+        elif mayor_igual_a_4(notas) == False or promedio(notas) < 4:
+            return 3
+        
+def mayor_igual_a_4(lista:[int])->bool:
+    for i in range(0,len(lista)):
+        if lista[i] < 4:
+            return False
+    return True
+            
+    
+def promedio(lista:[int])->int:
+    acumulado:int = 0
+    for numero in lista:
+        acumulado += numero
+    res:int = (acumulado)//(len(lista))
+    return res 
+
+#EJERCICIO 4) INPUT TYPE EXERCISES
+#1)
+def estudiantes()->[str]:
+    res:[str] = []
+    nombre = ""
+    while (nombre != "listo"):
+        print("Ingrese los nombres: ")
+        nombre=input()
+        if nombre != "listo":
+            res.append(nombre)
+    return res
+#2)
+
        
  
