@@ -214,17 +214,21 @@ def monedero_electronico()->list[(str,int)]:
     historial:list[(str,int)] = []
     monto:int = 0
     modo:str = ""
+    saldo:int = 0
     while modo != "X":
         print("Queres Cargar creditos(C), Descontar creditos(D) o Terminar el programa(X)?")
         modo = input()
         if modo == "C":
             print("Ingrese el monto:")
             monto = input()
+            saldo += int(monto)
             historial.append(("C",monto))
         if modo == "D":
             print("Ingrese el descuento:")
             monto = input()
+            saldo -= int(monto)
             historial.append(("D",monto))
+    print("Tenes: "+str(saldo)+" pesos")        
     return historial
 
 #3)
@@ -239,8 +243,27 @@ def pertenece_a_cada_uno_pt1(lista:list[list[int]],numero:int,res:list[bool]):
         if pertenece(lista[i],numero) == False:
             res.append(False)
     print(res)
-    
-#2)    
+
+#2) XD
+
+#3)
+def es_matriz(listas:[[int]])->bool:
+    for i in range(0,len(listas)):
+        if len(listas[0]) != len(listas[i]):
+            return False
+    return True
+
+#4)
+def filas_ordenadas(matriz:list[list[int]], res:list[bool]):
+    res:[bool] = []
+    for fila in matriz:
+        if ordenados(fila) == True:
+            res.append(True)
+        if ordenados(fila) == False:
+            res.append(False)
+    print(res)
+
+#5)
 
        
  
