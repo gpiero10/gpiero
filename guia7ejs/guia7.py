@@ -208,7 +208,39 @@ def estudiantes()->[str]:
         if nombre != "listo":
             res.append(nombre)
     return res
+
 #2)
+def monedero_electronico()->list[(str,int)]:
+    historial:list[(str,int)] = []
+    monto:int = 0
+    modo:str = ""
+    while modo != "X":
+        print("Queres Cargar creditos(C), Descontar creditos(D) o Terminar el programa(X)?")
+        modo = input()
+        if modo == "C":
+            print("Ingrese el monto:")
+            monto = input()
+            historial.append(("C",monto))
+        if modo == "D":
+            print("Ingrese el descuento:")
+            monto = input()
+            historial.append(("D",monto))
+    return historial
+
+#3)
+
+#Ejercicio 5)
+#1)
+def pertenece_a_cada_uno_pt1(lista:list[list[int]],numero:int,res:list[bool]):
+    res:list[bool]= []
+    for i in range(0,len(lista)):
+        if pertenece(lista[i],numero) == True:
+            res.append(True)
+        if pertenece(lista[i],numero) == False:
+            res.append(False)
+    print(res)
+    
+#2)    
 
        
  
