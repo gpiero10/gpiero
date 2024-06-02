@@ -94,7 +94,32 @@ def agregar_frase_al_principio(archivo:str,frase:str):
         f.write(linea) 
     f.close()
     
-#Ejercicio 6) XD?
+#Ejercicio 6)
 
-#Ejercicio 7)
+#Ejercicio 7) si no le meto enter a la ultima linea, el ultimo elemento no se agrega (CONSULTAR)
+def promedio_estudiante(archivo,lu:str)->float:
+    f = open(archivo)
+    lineas = f.readlines()
+    dataenlineas:list[list[str]] = []
+    for linea in lineas:
+        datadelalumno:list[str] = []
+        data:str = ""    
+        for caracter in linea:
+            if caracter != "," and caracter != "\n":
+                data += caracter
+            if caracter == ",":
+                datadelalumno.append(data)
+                data = ""
+            if caracter == "\n":
+                datadelalumno.append(data)
+                dataenlineas.append(datadelalumno)
+    f.close()   
+    cantmaterias:float = 0
+    sumatoriadenotas:float = 0
+    for datapersonal in dataenlineas:
+        if lu == datapersonal[0]:
+            sumatoriadenotas += float(datapersonal[3])
+            cantmaterias += 1
+    promedio:float = ((sumatoriadenotas)//(cantmaterias))
+    return promedio
     
