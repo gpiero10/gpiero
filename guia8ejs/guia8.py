@@ -1,0 +1,100 @@
+#EJERCICIO 1)
+#1.1)
+def cant_lineas(archivo)->int:
+    f = open(archivo)
+    return len(f.readlines())
+    f.close()
+    
+#1.2)
+def pertenece(palabra:str,archivo)->bool:
+    f = open(archivo)
+    t = f.readlines()
+    comp = ""
+    for linea in t:
+        for caracter in linea:
+            if caracter != " " and caracter != "\n":
+                comp += caracter
+            else:
+                if comp == palabra:
+                    return True
+                    f.close()
+                else:
+                    comp = ""
+    f.close()
+    return False
+
+#1.3)
+def cantidad_apariciones(palabra:str,archivo)->int:
+    f = open(archivo)
+    res:int = 0
+    t = f.readlines()
+    comp = ""
+    if (pertenece(palabra,archivo) == False):
+        return 0
+    if (pertenece(palabra,archivo) == True):
+        for linea in t:
+            for caracter in linea:
+                if caracter != " " and caracter != "\n":
+                    comp += caracter
+                else:
+                    if comp == palabra:
+                        res += 1
+                        comp = ""
+                    else:
+                        comp = ""
+    f.close()
+    return res
+             
+#Ejercicio 2
+def clonar_sincoments(archivo:str):
+    f = open(archivo)
+    lineas:list[str] = f.readlines()
+    res = open("res.txt",'w')
+    for linea in lineas:
+        if es_linea_valida(borra_espacios_en_blanco(linea)) == True:
+            res.write(linea)
+    f.close()
+    res.close()
+    
+def borra_espacios_en_blanco(linea:str)->str:
+    res:str = ""
+    for i in range(0,len(linea)):
+        if linea[i] != " ":
+            res += linea[i]
+    return res
+
+def es_linea_valida(linea:str)->bool:
+    if linea[0] != "#":
+        return True
+    return False
+
+#Ejercicio 3) problema en la ultima linea
+def invertir_lineas(archivo:str):
+    f = open(archivo)
+    lineas:list[str] = f.readlines()
+    res = open("reverso.txt",'w')
+    for i in range(len(lineas)-1,-1,-1):
+        res.write(lineas[i])
+    f.close()
+    res.close()
+    
+#Ejercicio 4)
+def agregar_frase_al_final(archivo:str,frase:str):
+    f = open(archivo,'a')
+    f.write(" "+frase)
+    f.close()
+
+#Ejercicio 5)   
+def agregar_frase_al_principio(archivo:str,frase:str):
+    f = open(archivo,'r')
+    lineas = [frase+"\n"]+f.readlines()
+    f.close()
+    f = open(archivo,'w')
+    for linea in lineas:
+        f.write(linea) 
+    f.close()
+    
+#Ejercicio 6) XD?
+
+#Ejercicio 7)
+    
