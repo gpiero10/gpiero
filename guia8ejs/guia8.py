@@ -148,3 +148,49 @@ def cant_elem(p:Pila)->int:
 
 #EJERCICIO 10)
 def maximo(p:Pila[int])->int:
+    lista:list[int] = []
+    while p.empty() != True:
+        lista.append(p.get())
+    for elemento in lista[::-1]:
+        p.put(elemento)
+    return maxp(lista)
+    
+def maxp(lista:list[int]):
+    res = lista[0]
+    for i in range(1, len(lista)):
+        if res < lista[i]: 
+            res = lista[i]
+    return res
+
+#EJERCICIO 11)
+# def esta_bien_balanceada(operacion:str)->bool:
+
+
+# def es_parent_izq():
+#     if caracter
+
+
+#EJERCICICO 13) COLAS
+from queue import Queue as Cola
+import random
+
+def gnum(cantidad:int,desde:int,hasta:int)->Cola[int]:
+    res:Cola[int] = Cola()
+    i:int = 0
+    while i < cantidad:
+        res.put(random.randint(desde,hasta))
+        i += 1
+    return res
+
+#EJERCICIO 14)
+def cant_elem_pt2(c:Cola)->int:
+    res:int = 0
+    contenido:list[int] = []
+    while c.empty() != True:
+        contenido.append(c.get())
+        res += 1
+    for elemento in contenido:
+        c.put(elemento)
+    return res
+
+d = {"Messi":8,"Neymar":0}
