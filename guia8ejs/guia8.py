@@ -122,4 +122,29 @@ def promedio_estudiante(archivo,lu:str)->float:
             cantmaterias += 1
     promedio:float = ((sumatoriadenotas)//(cantmaterias))
     return promedio
-    
+
+#Ejercicio 8) PILAS
+from queue import LifoQueue as Pila
+import random
+
+def generar_num_al_azar(cantidad:int,desde:int,hasta:int)->Pila[int]:
+    res:Pila[int] = []
+    i:int = 0
+    while i < cantidad:
+        res.append(random.randint(desde,hasta))
+        i += 1
+    return res
+
+#Ejercicio 9)
+def cant_elem(p:Pila)->int:
+    res = 0
+    contenido = []
+    while p.empty() != True:
+        contenido.append(p.get())
+        res += 1
+    for elemento in contenido[::-1]:
+        p.put(elemento)
+    return res
+
+#EJERCICIO 10)
+def maximo(p:Pila[int])->int:
