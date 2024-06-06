@@ -410,3 +410,22 @@ def la_palabra_mas_frecuente(archivo:str)->str:
     return res
 
 #EJERCICIO 22)
+historiales:dict[str,Pila[str]] = {}
+#2)
+def visitar_sitio(historiales:dict[str,Pila[str]], usuario:str, sitio: str):
+    sitios:Pila[str] = Pila()
+    sitios.put(sitio)
+    if usuario in historiales:
+        historiales[usuario].put(sitio)
+    else:
+        historiales[usuario] = sitios
+
+#3)
+def navegar_atras(historiales:dict[str,Pila[str]], usuario:str):
+    lista:list[str] = []
+    while historiales[usuario].empty() != True:
+        lista.append(historiales[usuario].get())
+    for i in range(len(lista)-1,0,-1):
+        historiales[usuario].put(lista[i])
+
+#EJERCICIO 23)
