@@ -429,3 +429,31 @@ def navegar_atras(historiales:dict[str,Pila[str]], usuario:str):
         historiales[usuario].put(lista[i])
 
 #EJERCICIO 23)
+info_adicional:dict[str,list[float,int]] = {}
+inventario:dict[str,dict[str,list[float,int]]] = {}
+
+#1)
+def agregar_producto(inventario:dict[str,dict[str,list[float,int]]], nombre:str, precio:float, cantidad:int):
+    info_adicional[nombre] = [precio,cantidad]
+    inventario[nombre] = info_adicional[nombre]
+    return inventario
+
+#2)
+def actualizar_stock(inventario:dict[str,dict[str,list[float,int]]],nombre:str,cantidad:int):
+    info_adicional[nombre][1] = cantidad
+    inventario[nombre] = info_adicional[nombre]
+    return inventario
+
+#3)
+def actualizar_precio(inventario:dict[str,dict[str,list[float,int]]],nombre:str,precio:float):
+    info_adicional[nombre][0] = precio
+    inventario[nombre] = info_adicional[nombre]
+    return inventario
+
+#4)
+def calcular_valor_inventario(inventario:dict[str,dict[str,list[float,int]]])->float:
+    valor_total:float = 0
+    for elemento in inventario:
+        valor_mercaderia:float = inventario[elemento][0] * float(inventario[elemento][1])
+        valor_total += valor_mercaderia
+    print("El valor Total del inventario es: "+str(valor_total))
