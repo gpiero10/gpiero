@@ -1,0 +1,51 @@
+---Ejercicio 1)
+atajaronSuplentes [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [5,7,9] 30 
+expected = 9
+
+atajaronSuplentes [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [5,7,18] 30 
+expected = 0
+
+
+
+---Ejercicio 2)
+aplanadora [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")]
+expected = ["Leicester","Kasper","Boca","Romero","Residencial FC","Carloncho"]
+
+
+equiposValidos :: [(String, String)] -> Bool
+equiposValidos (xs) = auxequiposvalidos xs
+
+equiposValidos [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")]
+expected = True
+
+equiposValidos [("Leicester","Romero"),("Boca","Romero"),("Residencial FC","Carloncho")]
+expected = False
+
+
+
+---Ejercicio 3)
+porcentajeDeGoles :: String -> [(String, String)] -> [Int] -> Float
+porcentajeDeGoles a (x:xs) (ys) = auxi a (x:xs) (ys)
+
+
+
+asociador [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [7,8,9]
+
+expected = [("Leicester","Kasper",7),("Boca","Romero",8),("Residencial FC","Carloncho",9)]
+
+
+encuentratripla "Carloncho" [("Leicester","Kasper",7),("Boca","Romero",8),("Residencial FC","Carloncho",9)]
+expected = ("Residencial FC","Carloncho",9)
+
+porcentajeDeGoles "Romero" [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [7,8,9]
+expected = 8/24 = 0.3333..
+
+porcentajeDeGoles "Carloncho" [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [7,8,9]
+expected = 9/24 = 0.375
+
+---Ejercicio 4)
+vallaMenosVencida [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [7,8,9]
+expected = "Kasper"
+
+vallaMenosVencida [("Leicester","Kasper"),("Boca","Romero"),("Residencial FC","Carloncho")] [10,9,8]
+expected = "Carloncho"

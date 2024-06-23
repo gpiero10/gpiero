@@ -1,0 +1,73 @@
+Ejercicio 1)
+filaClientes = Cola()
+filaClientes.put(("Hatem","vip"))
+filaClientes.put(("Karim","vip"))
+filaClientes.put(("Juaneco","comun"))
+filaClientes.put(("Hazard","vip"))
+filaClientes.put(("Sway","comun"))
+
+reordenar_cola_priorizando_vips(filaClientes)
+expected: ["Hatem","Karim","Hazard","Juaneco","Sway"]
+
+---------------------------------------------------------------------
+EJERCICIO 2)
+estrategias = {"Hatem":"me la banco y no me desvio","Echemierdi":"me desvio siempre","Hazard":"me la banco y no me desvio","Gian":"me la banco y no me desvio","Rice":"me desvio siempre","Marco":"me la banco y no me desvio","Ye":"me la banco y no me desvio","Nasri":"me desvio siempre","Dembele":"me desvio siempre"}
+
+torneo_de_gallinas(estrategias)
+
+----------------------------------------------------------------------
+EJERCICIO 3)
+hay_tres_consecutivos('X',[' ','X',' ','X','X'])
+False
+hay_tres_consecutivos('X',[' ',' ','X','X','X']) 
+True
+hay_tres_consecutivos('X',[' ','X','X','O','X']) 
+False
+hay_tres_consecutivos('X',[' ','X','X','X',' ']) 
+True
+hay_tres_consecutivos('X',[' ','X','X','X','O']) 
+True
+hay_tres_consecutivos('X',[' ',' ',' ',' ',' ']) 
+False
+hay_tres_consecutivos('X',[' ',' ','O',' ',' ']) 
+False
+hay_tres_consecutivos('X',[' ',' ','O','O','O']) 
+False
+hay_tres_consecutivos('O',[' ',' ','O','O','O']) 
+True
+hay_tres_consecutivos('O',['X','X','X','O','O','O'])
+True
+hay_tres_consecutivos('O',['X','X','O','X','O','O'])
+False
+hay_tres_consecutivos('X',['X','X','X','O','O','O']) 
+True
+
+tablero = [[' ','X',' ','X','X'],[' ','X',' ','X','X'],[' ','X',' ','X','X'],[' ','X',' ','X','X'],[' ','X',' ','X','X']]
+
+contador('X',tablero)
+res: 15
+
+tablero = [[' ','X',' ','O','X'],[' ','X','O','X','X'],[' ','X','X','X','O'],['O','X',' ','O','X'],[' ','O',' ','X','X']]
+
+
+
+tablero = [[' ','X',' ','O','X'],[' ','X','O','X','X'],[' ',' ','X',' ','O'],['O','X','O','O','O'],[' ','O',' ',' ','X']]
+quien_gano_el_tateti_facilito(tablero)
+res: 2
+
+hay_tres_consecutivos('O',[[' ','X',' ','O','X'],[' ','X','O','X','X'],[' ',' ','X',' ','O'],['O','X','O','O','O'],[' ','O',' ',' ','X']])
+
+quien_gano_el_tateti_facilito([[' ','X',' ','O','X'],[' ','X','O','X','X'],[' ',' ','X',' ','O'],['O','X','O','O','O'],[' ','O',' ',' ','X']])
+res: 0
+
+quien_gano_el_tateti_facilito([[' ','O',' ','O','X'],[' ','X','O','X','X'],[' ',' ','O',' ','O'],['O','X','O','O','O'],[' ','O',' ',' ','X']])
+res: 2
+
+quien_gano_el_tateti_facilito([[' ','X',' ','O','X'],[' ','X','O','X','X'],['O',' ','O','X','O'],['O','X','O','X','O'],[' ','O','X',' ',' ']])
+res: 3
+
+
+
+
+------------------------------------------------------
+cuantos_sufijos_son_palindromos("Diego")

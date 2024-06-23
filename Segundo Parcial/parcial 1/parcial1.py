@@ -1,0 +1,53 @@
+#EJERCICIO 1
+def ultima_aparicion(lista:list[int],e:int)->int:
+    posibles:int = 0
+    diccionario:dict[int,int] = {}
+    for i in range(0,len(lista)):
+        if e == lista[i]:
+            posibles = i
+    return posibles
+
+#EJERCICIO 2
+def elementos_exclusivos(s:list[int],t:list[int])->list[int]:
+    res:list[int] = []
+    for elemento in s:
+        if not elemento in t and not elemento in res:
+            res.append(elemento)
+    for elemento in t:
+        if not elemento in s and not elemento in res:
+            res.append(elemento)
+    return res
+
+#EJERCICIO 3
+def contar_traducciones_iguales(inglish:dict[str,str],aleman:dict[str,str])->int:
+    lista_de_palabras_en_comun:list[str] = []
+    res:int = 0
+    for clave in inglish.keys():
+        if clave in aleman.keys():
+            lista_de_palabras_en_comun.append(clave)
+    for palabra in lista_de_palabras_en_comun:
+        if inglish[palabra] == aleman[palabra]:
+            res += 1
+    return res
+
+#EJERCICIO 4
+def convertir_a_diccionario(lista:list[int])->dict[int,int]:
+    dickcionario:dict[int,int] = {}
+    lista_claves:list[int] = []
+    #lista_claves
+    for elemento in lista:
+        if not elemento in lista_claves:
+            lista_claves.append(elemento)
+    #fin lista_claves
+    for elemento in lista_claves:
+        dickcionario[elemento] = cant_apa(elemento,lista)
+    return dickcionario
+
+#auxi cant apariciones
+def cant_apa(numero:int,lista:list[int])->int:
+    res:int = 0
+    for i in range(0,len(lista)):
+        if numero == lista[i]:
+            res += 1
+    return res
+#fin auxi

@@ -1,0 +1,69 @@
+---Ejercicio 1)
+votosEnBlanco [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [50,60,1202] 1500
+expected = 188
+
+votosEnBlanco [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [0,0,0] 1500
+expected = 1500
+
+votosEnBlanco [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [0,0,0] 0
+expected = 0
+
+votosEnBlanco [] [] 0
+expected = 0
+
+---Ejercicio 2)
+aplanador [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")]
+expected = ["Juaneco","Su combo","Pussy","Man","Ye","Kdot"]
+
+formulasValidas [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")]
+expected = True
+
+formulasValidas [("Juaneco","Ye"),("Pussy","Man"),("Ye","Kdot")]
+expected = False
+
+formulasValidas [("Juaneco","Ye")]
+expected = True
+
+
+---Ejercicio 3) 
+porcentajeDeVotos :: String -> [(String, String)] -> [Int] -> Float
+porcentajeDeVotos a (xs) (ys) =  
+
+asociador :: [(String, String)] -> [Int] -> [(String, String, Int)] 
+asociador [] [] = []
+asociador (x:xs) (y:ys) = creatripla x y:asociador(xs) (ys) 
+
+creatripla :: (String,String) -> Int -> (String,String,Int)
+creatripla (a,b) c = (a,b,c)
+
+TESTING:
+asociador [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [50,60,1202]
+expected = [("Juaneco","Su combo",50),("Pussy","Man",60),("Ye","Kdot",1202)]
+
+encuentratripla "Ye" [("Juaneco","Su combo",50),("Pussy","Man",60),("Ye","Kdot",1202)]
+expected = ("Ye","Kdot",1202)
+
+porcentajeDeVotos "Ye" [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [500,680,1202]
+expected = 50,46
+
+porcentajeDeVotos "Ye" [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [1203,1204,1205]
+expected = 33.36
+
+porcentajeDeVotos "Ye" [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [1200,1200,1200]
+expected = 33.333
+
+porcentajeDeVotos "Ye" [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [0,0,0]
+expected = NaN
+
+porcentajeDeVotos "Ye" [("Juaneco","Su combo"),("Pussy","Man"),("Ye","Kdot")] [0,0,1]
+expected = 100
+
+---Ejercicio 4)
+whoTheGoat [("Juaneco","Su combo",50),("Pussy","Man",60),("Ye","Kdot",1202)]
+expected = "Ye"
+
+whoTheGoat [("Juaneco","Su combo",1203),("Pussy","Man",1204),("Ye","Kdot",1202)]
+expected = "Pussy"
+
+whoTheGoat [("Juaneco","Su combo",1203)]
+expected = "Juaneco"
